@@ -40,7 +40,7 @@ public class WoldWideDailyRevenueSummary {
                 );
     }
 
-    // this is could looks as weird however, when we make in this way this will evenly distribute. If there is no in general resources we can split in this to sub job. just need to know how many groups we should to have.
+    // this is could looks as weird however, when we make in this way this will evenly distribute. If there is no in general resources we can split in this to sub job. just need to know how many groups we should to have. Also we can use simple function.hash
     public Dataset<Row> joinWithProduct(Dataset<Row> order, Dataset<Row> product, int numberGroups) {
         product = product
                 .withColumn("rn", functions.row_number().over(Window.partitionBy(product.col("origination_country")).orderBy(product.col("name"))))
