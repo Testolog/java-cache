@@ -49,7 +49,6 @@ public class CacheLayer {
                 }
             }
             innerState.remove(minKey);
-            usage -= 1;
             innerState.put(key, newValue);
             return;
         }
