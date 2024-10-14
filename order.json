@@ -1,0 +1,5 @@
+[
+  {"order_id": 1, "customer_id": 1, "product_id": 1, "amount": 2, "order_dt": "2022-05-05 10:01:01"},
+  {"order_id": 2, "customer_id": 1, "product_id": 2, "amount": 3, "order_dt": "2022-05-05 10:01:01"},
+  {"order_id": 3, "customer_id": 2, "product_id": 3, "amount": 7, "order_dt": "2022-05-05 11:00:00"}
+]
