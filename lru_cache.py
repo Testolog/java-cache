@@ -12,6 +12,8 @@ class LRUCache:
         if len(self.cache) == self.capacity:
             last = self.q.pop()
             del self.cache[last]
+        if key in self.cache:
+            self.q.remove(key)
         self.q.appendleft(key)
         self.cache[key] = value
 
@@ -38,3 +40,13 @@ if __name__ == '__main__':
     cache.put(3,3)
     assert cache.get(2) is None
     assert cache.get(1) == 1 
+    cache = LRUCache(2)
+    cache.put(1,1)
+    cache.put(1,1)
+    assert len(cache.q) == 1
+    assert cache.get(1) == 1
+    cache.put(3,3)
+    assert len(cache.q) == 2
+    cache.put(2,2)
+    assert len(cache.q) == 2
+    assert cache.get(1) is None
